@@ -35,11 +35,11 @@ def fare_calculator(start, end):
         main_difference = distance_diff_loop(start, end, West_loop, East_loop)
     
     #Predicts fare using the average cost per stop for the Sengkang LRT system
-    Average_cost = 0.18571
-    Cost = round(main_difference*Average_cost, 2)
+    Average_cost = {"Adult":0.18571, "Student":0.084286, "Senior citizen":0.11429}
+    Cost = round(main_difference*Average_cost[fare_type], 2)
     print (f"The distance between {start} and {end} is {main_difference} stops. The fare for your trip will be ${Cost}" )
 
-fare_calculator("Rumbia", "Fernvale")
+fare_calculator("Rumbia", "Fernvale", "Student")
 
 
 
